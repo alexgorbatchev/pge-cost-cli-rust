@@ -1,0 +1,230 @@
+{
+  "last_updated": "2026-06-03",
+  "plans": {
+    "E-1": {
+      "name": "Residential Services (Tiered)",
+      "tier_1": 0.32561,
+      "tier_2": 0.40702
+    },
+    "E-TOU-C": {
+      "name": "Residential Time-Of-Use (4-9 PM Everyday)",
+      "seasons": {
+        "summer": {
+          "start_month": 6,
+          "start_day": 1,
+          "end_month": 9,
+          "end_day": 30
+        },
+        "winter": {
+          "start_month": 10,
+          "start_day": 1,
+          "end_month": 5,
+          "end_day": 31
+        }
+      },
+      "schedule": {
+        "everyday": {
+          "peak": [
+            { "start": 16, "end": 21 }
+          ],
+          "off_peak": [
+            { "start": 0, "end": 16 },
+            { "start": 21, "end": 24 }
+          ]
+        }
+      },
+      "rates": {
+        "summer": {
+          "peak": 0.52240,
+          "off_peak": 0.39940
+        },
+        "winter": {
+          "peak": 0.39757,
+          "off_peak": 0.36757
+        }
+      }
+    },
+    "E-TOU-D": {
+      "name": "Residential Time-Of-Use (5-8 PM Weekdays)",
+      "seasons": {
+        "summer": {
+          "start_month": 6,
+          "start_day": 1,
+          "end_month": 9,
+          "end_day": 30
+        },
+        "winter": {
+          "start_month": 10,
+          "start_day": 1,
+          "end_month": 5,
+          "end_day": 31
+        }
+      },
+      "schedule": {
+        "weekdays": {
+          "peak": [
+            { "start": 17, "end": 20 }
+          ],
+          "off_peak": [
+            { "start": 0, "end": 17 },
+            { "start": 20, "end": 24 }
+          ]
+        },
+        "weekends_holidays": {
+          "off_peak": [
+            { "start": 0, "end": 24 }
+          ]
+        }
+      },
+      "rates": {
+        "summer": {
+          "peak": 0.47708,
+          "off_peak": 0.34212
+        },
+        "winter": {
+          "peak": 0.38747,
+          "off_peak": 0.34886
+        }
+      }
+    },
+    "EV2": {
+      "name": "Residential EV / Battery Storage (Everyday)",
+      "seasons": {
+        "summer": {
+          "start_month": 6,
+          "start_day": 1,
+          "end_month": 9,
+          "end_day": 30
+        },
+        "winter": {
+          "start_month": 10,
+          "start_day": 1,
+          "end_month": 5,
+          "end_day": 31
+        }
+      },
+      "schedule": {
+        "everyday": {
+          "peak": [
+            { "start": 16, "end": 21 }
+          ],
+          "partial_peak": [
+            { "start": 15, "end": 16 },
+            { "start": 21, "end": 24 }
+          ],
+          "off_peak": [
+            { "start": 0, "end": 15 }
+          ]
+        }
+      },
+      "rates": {
+        "summer": {
+          "peak": 0.53809,
+          "partial_peak": 0.42760,
+          "off_peak": 0.22558
+        },
+        "winter": {
+          "peak": 0.41099,
+          "partial_peak": 0.39428,
+          "off_peak": 0.22558
+        }
+      }
+    },
+    "E-ELEC": {
+      "name": "Residential Electric Home (Everyday)",
+      "seasons": {
+        "summer": {
+          "start_month": 6,
+          "start_day": 1,
+          "end_month": 9,
+          "end_day": 30
+        },
+        "winter": {
+          "start_month": 10,
+          "start_day": 1,
+          "end_month": 5,
+          "end_day": 31
+        }
+      },
+      "schedule": {
+        "everyday": {
+          "peak": [
+            { "start": 16, "end": 21 }
+          ],
+          "partial_peak": [
+            { "start": 15, "end": 16 },
+            { "start": 21, "end": 24 }
+          ],
+          "off_peak": [
+            { "start": 0, "end": 15 }
+          ]
+        }
+      },
+      "rates": {
+        "summer": {
+          "peak": 0.55214,
+          "partial_peak": 0.39026,
+          "off_peak": 0.33358
+        },
+        "winter": {
+          "peak": 0.32063,
+          "partial_peak": 0.29854,
+          "off_peak": 0.28468
+        }
+      }
+    },
+    "EV-B": {
+      "name": "Residential EV Option B (Weekdays/Weekends)",
+      "seasons": {
+        "summer": {
+          "start_month": 5,
+          "start_day": 1,
+          "end_month": 10,
+          "end_day": 31
+        },
+        "winter": {
+          "start_month": 11,
+          "start_day": 1,
+          "end_month": 4,
+          "end_day": 30
+        }
+      },
+      "schedule": {
+        "weekdays": {
+          "peak": [
+            { "start": 14, "end": 21 }
+          ],
+          "partial_peak": [
+            { "start": 7, "end": 14 },
+            { "start": 21, "end": 23 }
+          ],
+          "off_peak": [
+            { "start": 0, "end": 7 },
+            { "start": 23, "end": 24 }
+          ]
+        },
+        "weekends_holidays": {
+          "peak": [
+            { "start": 15, "end": 19 }
+          ],
+          "off_peak": [
+            { "start": 0, "end": 15 },
+            { "start": 19, "end": 24 }
+          ]
+        }
+      },
+      "rates": {
+        "summer": {
+          "peak": 0.62131,
+          "partial_peak": 0.37720,
+          "off_peak": 0.26465
+        },
+        "winter": {
+          "peak": 0.43878,
+          "partial_peak": 0.30677,
+          "off_peak": 0.23504
+        }
+      }
+    }
+  }
+}

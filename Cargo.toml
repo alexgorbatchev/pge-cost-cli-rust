@@ -1,0 +1,28 @@
+[package]
+name = "pge-cost-cli"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Estimate continuous device energy costs using PG&E residential rates"
+
+[[bin]]
+name = "pge-cost"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0.104"
+calamine = "0.36.1"
+chrono = { version = "0.4.45", features = ["serde"] }
+chrono-tz = "0.10.4"
+cli-command-kit = { path = "../cli-command-kit" }
+comfy-table = "8.0.1"
+reqwest = { version = "0.13.5", default-features = false, features = ["rustls"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+tempfile = "3.27.0"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal", "time"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+
+[dev-dependencies]
+rust_xlsxwriter = "0.99.1"
+tiny_http = "0.12.0"
