@@ -105,7 +105,7 @@ async fn rejects_invalid_arguments_before_files_and_emits_errors_once() {
 
 #[tokio::test]
 async fn metadata_helps_and_output_failures_use_the_shared_contract() {
-    let expected = help_options().skill.unwrap();
+    let expected = INSTALL_TEXT;
     for mode in [Mode::Human, Mode::Agent] {
         let (status, output, errors) = run(&["pge-cost", "skill"], mode).await;
         assert_eq!(status, 0);
@@ -201,8 +201,10 @@ fn usage_skill_covers_the_live_interface_and_matches_its_install_identity() {
     let options = help_options();
     let missing = cli_command_kit::skill_omissions(&command(), &options, &document);
     assert!(missing.is_empty(), "{missing:?}");
-    let pointer = options.skill.unwrap();
+    let pointer = INSTALL_TEXT;
     assert!(pointer.contains("--skill pge-cost\n"));
     assert!(pointer.contains("/skills/pge-cost\n"));
     assert!(document.lines().any(|line| line == "name: pge-cost"));
 }
+
+const INSTALL_TEXT: &str = "Install the pge-cost skill using the Skills CLI:\n\n  npx skills add alexgorbatchev/pge-cost-cli --skill pge-cost\n\nSkill:\n\n  https://github.com/alexgorbatchev/pge-cost-cli/tree/main/skills/pge-cost\n";

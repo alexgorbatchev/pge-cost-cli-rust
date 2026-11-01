@@ -18,8 +18,6 @@ use std::{
 };
 use tokio_util::sync::CancellationToken;
 
-const SKILL: &str = "Install the pge-cost skill using the Skills CLI:\n\n  npx skills add alexgorbatchev/pge-cost-cli --skill pge-cost\n\nSkill:\n\n  https://github.com/alexgorbatchev/pge-cost-cli/tree/main/skills/pge-cost\n";
-
 fn db_arg() -> Arg {
     Arg::new("db")
         .long("db")
@@ -132,7 +130,10 @@ pub fn command() -> Command {
 
 pub fn help_options() -> HelpOptions {
     HelpOptions {
-        skill: Some(SKILL.into()),
+        skill: Some(
+            cli_command_kit::SkillSource::new("alexgorbatchev/pge-cost-cli", "main")
+                .expect("the fixed skill source names a GitHub repository"),
+        ),
         ..Default::default()
     }
 }
@@ -200,7 +201,7 @@ async fn perform(
     mode: Mode,
     cancel: CancellationToken,
 ) -> Result<()> {
-    if cli_command_kit::write_skill(matches, options, output)? {
+    if cli_command_kit::write_skill(&command(), matches, options, output)? {
         return Ok(());
     }
     if matches.get_flag("version") {
