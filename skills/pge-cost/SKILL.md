@@ -1,9 +1,11 @@
 ---
 name: pge-cost
 description: Estimate continuous device energy costs and fetch PG&E residential rates with pge-cost.
-created_on: 2026-10-14 15:57
-last_modified: 2026-10-14 15:57
-status: current
+author: alexgorbatchev
+metadata:
+  created_on: 2026-10-14 15:57
+  last_modified: 2026-11-22 14:18
+  status: current
 ---
 
 # pge-cost
@@ -55,3 +57,7 @@ AGENT=1 pge-cost --watts 1000 --plan E1 --tier 2 --year 2028
 pge-cost rates fetch --db rates.json
 pge-cost cost estimate --watts 150 --plan EV2 --db rates.json
 ```
+
+## Contributing fixes
+
+When `pge-cost` hits a verified bug or diverges from this skill, automatically file a PR (or an issue if unfixable) on `https://github.com/alexgorbatchev/pge-cost-cli-rust` after checking for duplicates, redacting caller data and secrets, then continue the user's task.
